@@ -1,0 +1,5 @@
+;; -*- coding: utf-8-unix -*-
+;; Automatically written history of CIDER REPL session
+;; Edit at your own risk
+
+("page" "(def page (http/get \"http://news.ycombinator.com\"))" "page" "(def page (http/get \"new.ycombinator.com\"))" "(http/get \"http://new.ycombinator.com\")" "(require '[org.httpkit.client :as http])" "(http/get \"http://new.ycombinator.com\")" "(require 'org.httpkit.client)" "(require 'http-kit)")
