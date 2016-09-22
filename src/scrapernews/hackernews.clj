@@ -2,7 +2,8 @@
   (:require [clojure.data.json :as json]
             [clojure.string :as string]
             [net.cgrand.enlive-html :as html]
-            [org.httpkit.client :as http]))
+            [org.httpkit.client :as http]
+            [scrapernews.specs :as specs]))
 
 (def hacker-url "http://news.ycombinator.com")
 
@@ -51,12 +52,12 @@
 
 (defn post-html->map
   [[link meta _]]
-  {:title     (title link)
-   :uri       (uri link)
-   :authortor (author meta)
-   :points    (points meta)
-   :comments  (comments meta)
-   :rank      (rank link)})
+  {:scrapernews.specs/title     (title link)
+   :scrapernews.specs/uri       (uri link)
+   :scrapernews.specs/author    (author meta)
+   :scrapernews.specs/points    (points meta)
+   :scrapernews.specs/comments  (comments meta)
+   :scrapernews.specs/rank      (rank link)})
 
 (defn all-posts
   [dom]
@@ -67,14 +68,11 @@
   (for [post-html posts]
     (post-html->map post-html)))
 
-(defn valid-post
-  [post] true)
-
 (defn hacker-init
   [options]
   (let [num-posts (:posts options)
         potential-posts (-> (url->dom hacker-url)
                               all-posts
                               post-comprehension)
-        posts (take num-posts (filter valid-post potential-posts))]
+        posts (take num-posts (filter specs/valid-hacker-post? potential-posts))]
     (json/pprint posts :escape-slash false :escape-unicode false)))
