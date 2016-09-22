@@ -2,4 +2,67 @@
 ;; Automatically written history of CIDER REPL session
 ;; Edit at your own risk
 
-("page" "(def page (http/get \"http://news.ycombinator.com\"))" "page" "(def page (http/get \"new.ycombinator.com\"))" "(http/get \"http://new.ycombinator.com\")" "(require '[org.httpkit.client :as http])" "(http/get \"http://new.ycombinator.com\")" "(require 'org.httpkit.client)" "(require 'http-kit)")
+("(-main \"hacker\")" "(-main \"hacker\" \"--posts\" \"2\")" "(-main \"--posts\" \"2\")" ")(-main \"--posts\" \"2\")" "i" "y" "(-main \"--posts\" \"2\")" "(-main \"--blarg\" \"2\")" "(-main \"--posts\" \"2\")" "(-main \"--posts 2\")" "(-main [\"--posts 2\"])" "(-main [--posts 2])" "(*1)" "(-main 10)" "(json/pprint res :escape-slash false :escape-unicode false)" "(json/pprint res :escape-slash false)" "(json/pprint {:a 1 :b 2} :escape-slash false)" "(json/pprint {:a 1 :b 2} {:escape-slash false})" "(json/pprint res {:escape-slash false})" "res" "(json/pprint res)" "(json/write-str res)" "(json/write res)" "(require '[clojure.data.json :as json])" "(into {} res)" "res" "(into {} res)" "(into {} red)" "(first res)" "(def res *1)" "(-main)" " (-main)" "(-main)" "(some-> (html/select mtt [:contect]) first read-string)" "(some-> (html/select mtt [:contect]))" "(html/select mtt [:contect])" "mtt" "(def mtt *1)" "(second (first stor))" "(def stor *1)" "(-main)" "(second (first stories))" "mtt" "(-> (html/select mtt [:a :> html/text])
+                      
+                      last
+                      (string/split #\" \"))" "(-> (html/select mtt [:a :> html/text])
+                      
+                      last
+                      (string/split #\"_\"))" "(-> (html/select mtt [:a :> html/text])
+                      
+                      last
+                      (string/split #\"\\_\"))" "(-> (html/select mtt [:a :> html/text])
+                      
+                      last
+                      (string/split #\"_\"))" "(-> (html/select mtt [:a :> html/text])
+                      
+                      last)" "(-> (html/select mtt [:a :> html/text])
+                      
+                      last
+                      (string/split #\"_\"))" "(-> (html/select mtt [:a :> html/text])
+                      
+                      last)" "(-> (html/select mtt [:a :> html/text]))" "(html/select mtt [:a :> html/text])" "(string/split \"122_something\" #\"_\")" "(comments mtt)" "mtt" "(def mtt *1)" "(second (first stories))" "(first stories)" "stories" "(def stories *1)" "(-main)" "(first (stories))" "(first stories)" "(-main)" "(-meta)" "stories " "(-main)" "(rank *1)" "(first (first stories))" "(first stories)" "(defn rank
+  [node]
+  (-> (html/select node [:span.rank :> html/text])
+      first
+      (string/split #\"\\.\")
+      first
+      read-string))" "(require '[clojure.string :as string])" "(defn rank
+  [node]
+  (-> (html/select node [:span.rank :> html/text])
+      first
+      (string/split #\"\\.\")
+      first
+      read-string))" "(.replaceAll \"123 fdd 33\" \"\\\\D\" \"\")" "(.replaceAll \"123 fdd 33\" \"\\D\" \"\")" "(.replaceAll \"123 fdd 33\" #\"\\D\" \"\")" "(.replaceAll \"123 fdd 33\" #\"\\D\")" "meta-link" "(html/select meta-link [:a :> html/text-node])" "(html/select meta-link [:a :> html/text])" "(html/select meta-link [:a])" "meta-link" "(second stories)" "(points meta-link)" "meta-link" "(defn points
+  [node]
+  (-> (html/select node [:span.score :> html/text])
+      first
+      (clojure.string/split #\"\\s\")
+      first
+      read-string))" "(re-matches #\".*(\\d+).*\" \"123 hello\")" "(re-matches #\"(\\d+).*\" \"123 hello\")" "(re-matches #\"\\d+\" \"123 hello\")" "(re-matcher #\"\\d+\" \"123 hello\")" "(clojure.string/split (first (html/select meta-link [:span.score :> html/text])) #\"\\s\")" "(clojure.string/split \" \" (first (html/select meta-link [:span.score :> html/text])))" "(clojure.string/split (first (html/select meta-link [:span.score :> html/text])))" "(first (html/select meta-link [:span.score :> html/text]))" "(html/select meta-link [:span.score :> html/text])" "(html/select meta-link [:span.score])" "meta-link" "(def meta-link (second (first stories )))" "(html/select *1 [:a.hnuser :> html/text])" "(html/select *1 [:a.hnuser])" "(second (first stories ))" "(first stories )" "(partition 2 [1 2 3])" "(last stories)" "(first stories)" "stories" "(def stories (partition 3 (html/select *1 [:table.itemlist :tr])))" "(url->dom \"http://news.ycombinator.com\")" "(defn url->dom
+  [url] ;; maybe some validation here
+  (let [{:keys [body error] :as resp} @(http/get url)]
+    (if error
+      (throw (ex-info \"Unable to get dom\" {:causes error}))
+      (html/html-snippet body))))" "(defn url->dom
+  [url] ;; maybe some validation here
+  (let [{:keys [body error] :as resp} @(http/get url)]
+    (if error
+      (throw (ex-info \"Unable to get dom\" {:causes error}))
+      (html/html-snippet body))))
+i" "(that tup)" "(defn that [[core poo]] (println core))" "tup" "(def tup '((1 2 3) (1 2 3)))" "(partition 2 [1 2 3 4 5 6])" "page" "(get-in (first items) [:attrs :id])" "(first items)" "items" ":)" "items" "(get-in *1 [:attrs :id])" "(html/select (first items) [:tr])" "(get-in *1 [:attrs :id])" "(get-in *1 [:attrs :is])" "(html/select (first items) [:tr])" "(html/select (first items) [:a.storylink])" "(uri (first items))" "(defn uri
+  [node]
+  (get-in (first (html/select node [:a.storylink])) [:attrs :href]))" "(html/select (first items) [:a.storylink])" "(html/attr-values (first items) :href)" "(html/select (first items) [:a.storylink (html/attr? :href)])" "(html/select (first items) [[:a.storylink (html/attr? :href)]])" "(html/select (first items) [[:href :a.storylink]])" "(html/select (first items) [:href #{:a.storylink}])" "(html/select (first items) [:href [:a.storylink]])" "(html/select (first items) [:href :a.storylink])" "(html/select (first items) [:a.storylink :href])" "(title (first items))" "(first items)" "(first page)" " (defn title
+  [node]
+  (first (html/select node [:a.storylink :> html/text-node])))" "(defn title
+  [node]
+  (first (html/select snippet [:a.storylink :> html/text-node])))" "(html/select sl [html/text-node])" "(html/select sl [:> html/text-node])" "(html/select sl [:> html/text])" "(:content sl)" "sl" "(html/text-node sl)" "(html/text sl)" "sl" "(def sl *1)" "*1" "(html/select (first items) [:a.storylink])" "_" "(def sl *_)" "(def sl _)" "(html/select (first items) [:a.storylink])" "(def sl $1)" "(html/select (first items) [:a.storylink])" "(html/select (first items) [:a.storylink :> html/text])" "(html/select (first items) [:a.storylink])" "(html/select (first items) [:a.storylink :> html/text-node])" "(html/select (first items) [:td :a.storylink :> html/text-node])" "(html/select (first items) [:td :a.storylink #{:href}])" "(html/select (first items) [:td :a.storylink [:href]])" "(html/select (first items) [:td :a.storylink [:hre]])" "(html/select (first items) [:td :a.storylink])" "(html/select (first items) (first :content [:td :a.storylink]))" "(html/select (first items) [:td :a.storylink])" "(first items)" "(def items (html/select (hacker-dom) [:tr.athing]))" "(html/select (hacker-dom) [:tr.athing])" "(html/select (hacker-dom) [:tr])" "(class (hacker-dom))" "(hacker-dom)" "(html/select (hacker-dom) [:body])" "(html/select (hacker-dom) [:http])" "(html/select hacker-dom [:http])" "(hacker-dom)" "(defn hacker-dom []
+  (let [{:keys [body error] :as resp} @(http/get \"http://news.ycombinator.com\")]
+    (if error
+      (println \"oops\")
+      (html/html-snippet body))))
+" "(hacker-dom (hackerpage))" "(defn hacker-dom
+  [body]
+  (html/html-snippet (:body body)))" "(hackerpage)" "(defn hackerpage []
+  (let [{:keys [body error] :as resp} @(http/get \"http://news.ycombinator.com\")]
+    (if error (println \"oops\") body)))" "(html/select parsed [:table.itemlist [:tr]])" "(html/select parsed [:table.itemlist])" "(html/select parsed [:table])" "(html/select parsed [:tr])" "parsed" "(def parsed (html/html-snippet (:body @page)))" "(html/html-snippet (:body @page))" "(:error  @page)" "(:body  @page)" "@page" "page" "(:body page)" "page" "(html/html-snippet (:body page))" "page" "(def page (http/get \"http://news.ycombinator.com\"))" "(require '[net.cgrand.enlive-html :as html])" "(require '[org.httpkit.client :as http])" "(require '[org.http-kit.client :as http])" "page" "(def page (http/get \"http://news.ycombinator.com\"))" "page" "(def page (http/get \"new.ycombinator.com\"))" "(http/get \"http://new.ycombinator.com\")" "(require '[org.httpkit.client :as http])" "(http/get \"http://new.ycombinator.com\")" "(require 'org.httpkit.client)" "(require 'http-kit)")

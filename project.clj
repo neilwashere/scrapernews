@@ -6,7 +6,8 @@
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [http-kit "2.2.0"]
                  [enlive "1.1.6"]
-                 [org.clojure/data.json "0.2.6"]]
+                 [org.clojure/data.json "0.2.6"]
+                 [org.clojure/tools.cli "0.3.5"]]
   :main ^:skip-aot scrapernews.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
