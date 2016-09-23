@@ -59,7 +59,7 @@ If you just want a standalone jar, compile and install first
        "comments":32,
        "rank":2}]
 
-Posts that have missing or invalid attributes or have attributes will be discarded
+Posts that have missing or invalid attributes will be discarded
 
 ### Libraries in use
 
@@ -68,7 +68,7 @@ Posts that have missing or invalid attributes or have attributes will be discard
 * [org.clojure/data.json](https://github.com/clojure/data.json) - Defacto JSON lib for Clojure
 * [org.clojure/tools.cli](https://github.com/clojure/tools.cli) - Simple yet powerful command line arg processor
 
-I have also used an alpha version of Clojure as this includes the phenomenal [clojure spec](http://clojure.org/about/spec) API. The transformed hackernews posts are validated using specifcations
+I have also used an alpha version of Clojure as this includes the phenomenal [clojure spec](http://clojure.org/about/spec) API.
 
 
 ## License

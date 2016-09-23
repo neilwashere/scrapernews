@@ -3,6 +3,7 @@
             [clojure.string :as string])
   (:import [java.net URI]))
 
+;; TODO - Exception based programming is not idiomatic. Maybe, one day, find a *proper* regex for URI's
 (defn valid-uri?
   [uri]
   (try
@@ -28,6 +29,8 @@
 
 (s/def ::hacker-post (s/keys :req [::title ::author ::uri ::points ::comments ::rank]))
 
-(defn valid-hacker-post?
-  [post]
-  (s/valid? ::hacker-post post))
+(defn valid?
+  "Takes a spec definition and a value for conformance.
+  Returns Boolean"
+  [definition value]
+  (s/valid? definition value))
